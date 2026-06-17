@@ -7,7 +7,11 @@ import {
   AlertOctagon
 } from "lucide-react";
 
-export default function PricingAnchor() {
+type PricingAnchorProps = {
+  checkoutUrl: string;
+};
+
+export default function PricingAnchor({ checkoutUrl }: PricingAnchorProps) {
   const bonuses = [
     {
       icon: <FileCheck className="w-5 h-5 text-blue-500" />,
@@ -113,7 +117,7 @@ export default function PricingAnchor() {
 
               {/* 🎯 OFFICIAL JVZOO EMBEDDED BUTTON NORMS */}
               <div className="w-full flex justify-center py-2 transition-all duration-200 transform hover:-translate-y-0.5 active:scale-98">
-                <a href="https://www.jvzoo.com/b/0/443677/3" className="block focus:outline-hidden">
+                <a href={checkoutUrl} className="block focus:outline-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img 
                     src="https://i.jvzoo.com/0/443677/3" 
